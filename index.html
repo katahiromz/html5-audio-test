@@ -4,11 +4,14 @@
 	<meta charset="UTF-8" />
 	<title>audio-test</title>
 	<script>
-	function play_sound(id) {
+	function doPlaySound(id) {
 		try {
-			document.getElementById(id).pause();
-			document.getElementById(id).currentTime = 0;
-			document.getElementById(id).play();
+			let audio = document.getElementById(id);
+			if (audio) {
+				audio.pause();
+				audio.currentTime = 0;
+				audio.play();
+			}
 		} catch (err) {
 			;
 		}
@@ -22,5 +25,5 @@
 	<source src="sound.mp3" type="audio/mp3" />
 	<p>* Your browser doesn't support HTML5 audio.</p>
 </audio>
-<input type="button" onclick="play_sound('sound')" value="Play!" />
+<input type="button" onclick="doPlaySound('sound')" value="Play!" />
 </body></html>
