@@ -4,9 +4,11 @@
 	<meta charset="UTF-8" />
 	<title>audio-test</title>
 	<script>
-	async function play_sound(id) {
+	function play_sound(id) {
 		try {
-			await document.getElementById(id).play();
+			document.getElementById(id).pause();
+			document.getElementById(id).currentTime = 0;
+			document.getElementById(id).play();
 		} catch (err) {
 			;
 		}
