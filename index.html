@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<title>audio-test</title>
+	<script>
+	async function play_sound(id) {
+		try {
+			await document.getElementById(id).play();
+		} catch (err) {
+			;
+		}
+	}
+	</script>
+</head>
+<body>
+<h1>audio-test</h1>
+<audio id="sound" preload="auto">
+	<source src="sound.wav" type="audio/wav">
+	<p>* Your browser doesn't support HTML5 audio.</p>
+</audio>
+<input type="button" onclick="play_sound('sound')" value="Play!" />
+</body></html>
